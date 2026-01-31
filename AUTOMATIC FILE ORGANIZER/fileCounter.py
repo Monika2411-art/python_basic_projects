@@ -15,22 +15,31 @@ if not os.path.exists(source_path):
 	exit()
 print("Folder path found")
 
-extension_counter = {}
+#TO SIMPLY PRINT FILES
+#for filename in os.listdir(source_path):
+#	print(filename)
+	#if os.path.isfile(filename):
+	#	name, extension = os.path.splittext(filename)
+	#	print(f"Files = {names}, extension={extension}")
+
+
+
+#PRINTS WHOLE PATH
 for item in os.listdir(source_path):
 	file_path = os.path.join(source_path,item)
+	print(file_path)
 
+	extension_counter={
+		"txt" = input
 	if os.path.isfile(file_path):
+		
 		name , extension = os.path.splitext(item)
-	#	print(f"Files = {name}, extension = {extension}")
-
+		print(f"Files = {name}, extension = {extension}")
 		if extension == "":
 			continue
-
-		if extension in extension_counter:
-			extension_counter[extension] += 1
+		if os.path.exists(extension):
+			counter  +=  extension
 		else:
-			extension_counter[extension] = 1
-
-for ext, count in extension_counter.items():
-	print(f"{ext.upper()}  -- files :{count}")
+			extension +=  extension
+		print(f"{counter} of extension{name} ")
 	
